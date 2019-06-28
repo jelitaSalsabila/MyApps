@@ -7,16 +7,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class recycleHolder extends RecyclerView.ViewHolder {
+public class RecycleHolder extends RecyclerView.ViewHolder {
     public TextView articlesName;
     public ImageView imgholder;
     public TextView btndetail;
 
-    public recycleHolder(@NonNull View itemView) {
+    public RecycleHolder(@NonNull View itemView) {
         super(itemView);
 
-        articlesName = (TextView)itemView.findViewById(R.id.articlesName);
-        imgholder = (ImageView) itemView.findViewById(R.id.imgholder);
-        btndetail = (Button) itemView.findViewById(R.id.btndetail);
+        articlesName = itemView.findViewById(R.id.articlesName);
+        imgholder = itemView.findViewById(R.id.imgholder);
+        btndetail =  itemView.findViewById(R.id.btndetail);
     }
 }

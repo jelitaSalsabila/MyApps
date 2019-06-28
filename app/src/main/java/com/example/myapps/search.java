@@ -16,7 +16,6 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -33,20 +32,20 @@ import java.util.ArrayList;
 
 public class search extends AppCompatActivity {
 
-    public ArrayList<articles> articlesArrayList;
-    articles articles;
+    public ArrayList<ArticlesModel> articlesArrayList;
+    ArticlesModel articles;
     String article;
     EditText ed_search;
     RecyclerView recyclerView;
     Toolbar toolbar_back_button;
-    recyclerAdapter adapter;
+    RecyclerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         ed_search = (EditText) findViewById(R.id.ed_search);
-        articles = new articles();
+        articles = new ArticlesModel();
         toolbar_back_button = (Toolbar) findViewById(R.id.back_button);
         recyclerView = (RecyclerView) findViewById(R.id.recyle);
         recyclerView.setLayoutManager(new LinearLayoutManager(search.this));
@@ -148,10 +147,10 @@ public class search extends AppCompatActivity {
             Log.d("hasil json ", "onPostExecute: " + jsonObject.toString());
             if (jsonObject != null) {
                 try {
-                    JSONArray Hasiljson = jsonObject.getJSONArray("articles");
+                    JSONArray Hasiljson = jsonObject.getJSONArray("ArticlesModel");
                     articlesArrayList = new ArrayList<>();
                     for (int i = 0; i < Hasiljson.length(); i++) {
-                        articles = new articles();
+                        articles = new ArticlesModel();
                         //String urlku = "";
                         String gambar = Hasiljson.getJSONObject(i).getString("urlToImage");
                         articles.setTitle(Hasiljson.getJSONObject(i).getString("title"));
@@ -161,7 +160,7 @@ public class search extends AppCompatActivity {
                         articlesArrayList.add(articles);
                         Log.d("test", "onPostExecute: " + articles.getTitle());
                     }
-                    adapter = new recyclerAdapter(getApplicationContext(), articlesArrayList);
+                    adapter = new RecyclerAdapter(getApplicationContext(), articlesArrayList);
                     recyclerView.setAdapter(adapter);
                 } catch (JSONException e) {
                     e.printStackTrace();

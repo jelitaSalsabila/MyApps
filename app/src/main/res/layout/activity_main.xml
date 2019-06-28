@@ -8,12 +8,12 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/listdata"
-        android:visibility="gone"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <!--<LinearLayout-->
+        <!--android:id="@+id/listdata"-->
+        <!--android:visibility="gone"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/Rview"
@@ -22,19 +22,18 @@
         android:layout_marginTop="10dp"
         android:elevation="5dp"
         android:padding="3dp"/>
-    </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/listload"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:visibility="visible">
+    <!--<LinearLayout-->
+        <!--android:id="@+id/listload"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--android:visibility="visible">-->
 
-        <ProgressBar
-            android:layout_marginTop="300dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+        <!--<ProgressBar-->
+            <!--android:layout_marginTop="300dp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
+    <!--</LinearLayout>-->
 
 </LinearLayout>

@@ -1,11 +1,23 @@
 package com.example.myapps;
 
-public class articles {
+import com.google.gson.annotations.SerializedName;
+
+public class ArticlesModel {
+    @SerializedName("title")
     private String title;
+
+    @SerializedName("description")
     private String description;
+
+    @SerializedName("publishedAt")
     private String publishedAt;
+
+    @SerializedName("content")
     private String content;
+
+    @SerializedName("urlToImage")
     private String gambar;
+
     private String url;
 
     public String getTitle() {

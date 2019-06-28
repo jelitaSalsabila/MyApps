@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MyApps</string>
+    <string name="error_try_again">Connection failed. Please try again</string>
+    <string name="username_password_invalid">Username / Password is invalid</string>
 </resources>
